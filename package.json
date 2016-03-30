@@ -1,0 +1,28 @@
+{
+  "name": "find-posts",
+  "version": "0.0.0",
+  "description": "Find posts recursively within a subdirectory, and parse their front matter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bguiz/find-posts.git"
+  },
+  "keywords": [
+    "file",
+    "directory",
+    "front",
+    "matter",
+    "yaml",
+    "json",
+    "markdown"
+  ],
+  "author": "bguiz",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/bguiz/find-posts/issues"
+  },
+  "homepage": "https://github.com/bguiz/find-posts#readme"
+}
