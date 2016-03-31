@@ -2,7 +2,7 @@
   "name": "find-posts",
   "version": "0.0.0",
   "description": "Find posts recursively within a subdirectory, and parse their front matter",
-  "main": "index.js",
+  "main": "find-posts.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,5 +24,10 @@
   "bugs": {
     "url": "https://github.com/bguiz/find-posts/issues"
   },
-  "homepage": "https://github.com/bguiz/find-posts#readme"
+  "homepage": "https://github.com/bguiz/find-posts#readme",
+  "peerDependencies": {
+    "front-matter": "^2.0.6",
+    "moment": "~2.5.1",
+    "walkdir": "^0.0.11"
+  }
 }
