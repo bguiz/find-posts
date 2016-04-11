@@ -58,7 +58,8 @@ function generateDataForSsgwpImpl(posts, options) {
           title: post.header.title,
           date: post.header.__date_utc,
           tags: post.header.__tags,
-          url: (`/${post.file.year}/${post.file.month}/${post.file.day}/${post.file.slug}`),
+          url: post.header.url ||
+            (`/${post.file.year}/${post.file.month}/${post.file.day}/${post.file.slug}`),
           urlAliases: [],
         };
         var out = {
