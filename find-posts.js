@@ -37,7 +37,7 @@ function findPosts(dir, matchPostRegex) {
           .catch(reject);
       }
       else {
-        return reject('No posts found');
+        return reject(`No posts found in ${dir} using ${matchPostRegex}`);
       }
     });
   });
