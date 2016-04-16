@@ -20,10 +20,7 @@ function findPosts(dir, matchPostRegex) {
         let info = {
           fullpath,
           basename,
-          year: matches[1],
-          month: matches[2],
-          day: matches[3],
-          slug: matches[4],
+          matches,
         };
         results.push(annotatePost(info));
       }

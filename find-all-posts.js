@@ -25,7 +25,9 @@ function findAllPosts(options) {
       }
       for (let regexIdx = 0; regexIdx < regexes.length; ++regexIdx) {
         let regex = regexes[regexIdx];
-        // TODO also verify that regexes are indeed regexes
+        if (!(regex instanceof RegExp)) {
+          return reject(`Regex at #${regexIndex} is not a RegExp`);
+        }
         promises.push(findPosts(fullpath, regex));
       }
     }

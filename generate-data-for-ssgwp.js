@@ -36,8 +36,11 @@ function generateDataForSsgwpImpl(posts, options) {
         !path.isAbsolute(post.file.fullpath)) {
         return reject(`Invalid slug at post #${postIdx}`);
       }
-      if (!post.file.slug || typeof post.file.slug !== 'string') {
-        return reject(`Invalid slug at post #${postIdx}`);
+      if (!Array.isArray(post.file.matches)) {
+        return reject(`Invalid matches at post #${postIdx}`);
+      }
+      if (!post.header.url || typeof post.header.url !== 'string') {
+        return reject(`Invalid url at post #${postIdx}`);
       }
       if (!post.header.title || typeof post.header.title !== 'string') {
         return reject(`Invalid title at post #${postIdx}`);
@@ -58,8 +61,7 @@ function generateDataForSsgwpImpl(posts, options) {
           title: post.header.title,
           date: post.header.__date_utc,
           tags: post.header.__tags,
-          url: post.header.url ||
-            (`/${post.file.year}/${post.file.month}/${post.file.day}/${post.file.slug}`),
+          url: post.header.url,
           urlAliases: [],
         };
         var out = {
