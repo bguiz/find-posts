@@ -41,7 +41,7 @@ function frontMatterExtra(data) {
     content.attributes.__tags = content.attributes.tags
       .split(',')
       .map((tag) => {
-        return tag.trim();
+        return tag.trim().toLowerCase();
       });
   }
 
