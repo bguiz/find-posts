@@ -26,6 +26,16 @@ function findPosts(dir, matchPostRegex) {
       }
     });
 
+    finder.on('error', (path, err) => {
+      console.error(`walkdir error on ${path}`);
+      return reject(err);
+    });
+
+    finder.on('fail', (path, err) => {
+      console.error(`walkdir fail on ${path}`);
+      return reject(err);
+    });
+
     finder.on('end', () => {
       if (results.length > 0) {
         return Promise
@@ -39,7 +49,3 @@ function findPosts(dir, matchPostRegex) {
     });
   });
 }
-
-
-
-
