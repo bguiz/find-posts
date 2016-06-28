@@ -1,6 +1,6 @@
 {
   "name": "find-posts",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "Find posts recursively within a subdirectory, and parse their front matter",
   "main": "find-posts.js",
   "scripts": {
