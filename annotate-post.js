@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 
-const moment = require('moment');
+const dateParse = require('date-fns/parse');
 const frontMatter = require('front-matter');
 
 module.exports = annotatePost;
@@ -29,7 +29,7 @@ function frontMatterExtra(data) {
   // parse date into something useable
   try {
     content.attributes.__date_utc =
-      moment.utc(content.attributes.date).valueOf();
+      content.attributes.date.valueOf();
   }
   catch (ex) {
     console.error(`Unable to parse ${content.attributes.date} as a date`);
